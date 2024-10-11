@@ -36,10 +36,10 @@ In the last two windows, run the **`createReaders`** and **`createWriters`**, wh
 
 Once they start, **observe the monitor window** as Readers and Writers go in and out of the shared memory segment.
 
-You will notice that after the 20 readers and writers finish their job, they will "hang". This is expected, because there is no `wait_pid()` call in the createReaders and createWriters code. Therefore, once they are done, terminate them with the `CTRL + C` interrupt. 
+You will notice that after the 20 readers and writers finish their job, they will "hang". This is expected, because there is no `wait_pid()` call in the createReaders and createWriters code. Therefore, once they are done, terminate them with the `CTRL + C` interrupt.
 
 # How to Terminate 
-Once the processes are finished, press any key in the allocator side of the terminal window to print statistics that were collected during runtime. Finally, press y to indicate that you want to destroy the segment along with the semaphores, to dislocate system resources.
+Once the processes are finished, press any key in the allocator-side of the terminal window to print statistics that were collected during runtime. Finally, press `y` to destroy the segment along with the semaphores.
 
 # Further documentation
 For an in-depth look at the code, please refer to the documentation found in the `docs` folder. To view the offline documentation page, decompress the html folder and open the `index.html` file in your web browser.
