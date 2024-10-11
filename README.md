@@ -7,7 +7,7 @@ The entire project consists of the following programs:
 3. The **Dislocator**, which dislocates the resources allocated by the allocator. I haven't used it  much, since the allocator has dislocating capabilities, but is handy to have.
 2.	The **Monitor**, which prints the current state of the semaphores and the shared memory segment in real-time.
 3.	The **MallocCheck** and **SharedStruct** libraries. The first file contains custom helper functions for memory allocation checks and shared segment management (I simplified the API, incorporating the necessary checks so I wouldn’t clutter my main programs with code). The latter contains the definition of a shared data structure, along with helper functions for accessing it.
-4.	The **Reader** and **Writer** programs.s
+4.	The **Reader** and **Writer** programs.
 5.	The **createReaders** and **createWriters** programs, which act as a convenient way of spawning multiple Reader and Writer processes at random time to demonstrate the concurrency.
 Now, let's take a look at each program, starting with the Allocator.
 ## Allocator
