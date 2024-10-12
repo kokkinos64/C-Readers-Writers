@@ -8,8 +8,8 @@ The entire project consists of the following programs:
 2.	The **Monitor**, which prints the current state of the semaphores and the shared memory segment in real-time.
 3.	The **MallocCheck** and **SharedStruct** libraries. The first file contains custom helper functions for memory allocation checks and shared segment management (I simplified the API, incorporating the necessary checks so I wouldn’t clutter my main programs with code). The latter contains the definition of a shared data structure, along with helper functions for accessing it.
 4.	The **Reader** and **Writer** programs.
-5.	The **createReaders** and **createWriters** programs, which act as a convenient way of spawning multiple Reader and Writer processes at random time to demonstrate the concurrency.
-Now, let's take a look at each program, starting with the Allocator.
+5.	The **createReaders** and **createWriters** programs, which act as a convenient way of spawning multiple Reader and Writer processes at random, to demonstrate the concurrency.
+
 ## Allocator
 As the name suggests, the Allocator allocates memory and semaphores needed by the readers and writers. We use a total of three semaphores. The first is the well-known mutex for mutual exclusion, the second is wrt (short for writer), which blocks/unblocks the writers, and finally, queue, which ensures starvation-free concurrency. The initial values of these three semaphores are set to 1.
 The Allocator creates the semaphores with sem_open using the O_CREAT flag, then constructs the shared segment, which is of SharedStruct type, and maps it into memory. The Allocator is also responsible for error handling.
